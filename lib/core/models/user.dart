@@ -22,4 +22,11 @@ class User {
     data['username'] = this.username;
     return data;
   }
+
+  @override
+  String toString() {
+    return 'User{id: $id, name: $name, username: $username}';
+  }
+
+
 }

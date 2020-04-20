@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider_architecture_example/locator.dart';
-import 'package:provider_architecture_example/ui/views/login_view.dart';
+import 'package:provider_architecture_example/ui/router.dart';
 
 void main() {
   setupLocator();
@@ -10,10 +10,11 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       title: 'Provider architecture',
       theme: ThemeData(),
-      home: LoginView(),
+      initialRoute: Router.home,
+      onGenerateRoute: Router.generateRoute,
     );
   }
 }

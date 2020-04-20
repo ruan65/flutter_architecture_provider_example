@@ -16,7 +16,10 @@ class Api {
     var response = await client.get('$endpoint/users/$userId');
 
     // Convert and return
-    return User.fromJson(json.decode(response.body));
+    var user = User.fromJson(json.decode(response.body));
+    print('user: $user');
+
+    return user;
   }
 
   Future<List<Post>> getPostsForUser(int userId) async {
