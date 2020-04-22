@@ -7,6 +7,6 @@ class AuthenticationService {
 
   Future<bool> login(int userId) async {
     User fetchedUser = await _api.getUserProfile(userId);
-    return fetchedUser != null;
+    return fetchedUser?.id != null;
   }
 }

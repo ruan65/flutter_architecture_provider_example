@@ -1,20 +1,12 @@
-import 'package:flutter/cupertino.dart';
+import 'package:provider_architecture_example/core/enums/view_state.dart';
 import 'package:provider_architecture_example/core/services/authentication_service.dart';
+import 'package:provider_architecture_example/core/view_models/base_model.dart';
 import 'package:provider_architecture_example/locator.dart';
 
-enum ViewState { Idle, Busy }
-
-class LoginViewModel extends ChangeNotifier {
+class LoginModel extends BaseModel {
   final AuthenticationService _authenticationService =
       locator<AuthenticationService>();
-  ViewState _state = ViewState.Idle;
-
-  ViewState get state => _state;
-
-  void setState(ViewState newState) {
-    _state = newState;
-    notifyListeners();
-  }
+  String errorMessage;
 
   Future<bool> login(String userIdText) async {
     setState(ViewState.Busy);
@@ -22,6 +14,8 @@ class LoginViewModel extends ChangeNotifier {
     final userId = int.tryParse(userIdText);
 
     if (null == userId) {
+      errorMessage = 'Value is not a number';
+      setState(ViewState.Idle);
       return false;
     }
 

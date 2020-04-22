@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Provider architecture',
       theme: ThemeData(),
-      initialRoute: Router.home,
+      initialRoute: Router.login,
       onGenerateRoute: Router.generateRoute,
     );
   }
