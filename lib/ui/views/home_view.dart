@@ -22,7 +22,7 @@ class HomeView extends StatelessWidget {
       builder: (context, model, child) => Scaffold(
         backgroundColor: backgroundColor,
         body: model.state == ViewState.Busy
-            ? CircularProgressIndicator()
+            ? Center(child: CircularProgressIndicator())
             : Column(
                 children: <Widget>[
                   UIHelper.verticalSpaceLarge(),
