@@ -17,7 +17,9 @@ class _LoginViewState extends State<LoginView> {
 
   @override
   Widget build(BuildContext context) {
-    return BaseView<LoginModel>(builder: (context, model, child) {
+    return BaseView<LoginModel>(onModelReady: (model) {
+      print('model is ready: $model');
+    }, builder: (context, model, child) {
       return Scaffold(
         backgroundColor: backgroundColor,
         body: Column(
