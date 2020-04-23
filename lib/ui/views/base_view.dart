@@ -31,10 +31,4 @@ class _BaseViewState<T extends BaseModel> extends State<BaseView<T>> {
       child: Consumer<T>(builder: widget.builder),
     );
   }
-  @override
-  void dispose() {
-    model.dispose();
-    super.dispose();
-
-  }
 }
