@@ -11,7 +11,7 @@ import 'package:provider_architecture_example/ui/widgets/like_button.dart';
 GetIt locator = GetIt.instance;
 
 void setupLocator() {
-  locator.registerLazySingleton(() => LoginModel());
+  locator.registerFactory(() => LoginModel());
   locator.registerFactory(() => HomeModel());
   locator.registerFactory(() => CommentsModel());
   locator.registerFactory(() => LikeButtonModel());
